@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-08-14)
+## Unreleased (2026-09-25)
 
 <section class="features">
 
@@ -22,6 +22,7 @@
 
 <details>
 
+-   [`8da0d15`](https://github.com/stdlib-js/stdlib/commit/8da0d154e408d6cd6b3381341173e8c41eac7e59) - **chore:** clean-up [(#15455)](https://github.com/stdlib-js/stdlib/pull/15455) _(by Philipp Burckhardt)_
 -   [`75cbfe8`](https://github.com/stdlib-js/stdlib/commit/75cbfe8618e8d81293eefba72f9a651e786f37a0) - **bench:** fix description and update variable names in `blas/base/ndarray` [(#14261)](https://github.com/stdlib-js/stdlib/pull/14261) _(by Philipp Burckhardt)_
 -   [`9a1e43c`](https://github.com/stdlib-js/stdlib/commit/9a1e43c351a8d9df8563ef5767b27efbcbc89ceb) - **style:** fix disabling of lint rule _(by Athan Reines)_
 -   [`b20f51a`](https://github.com/stdlib-js/stdlib/commit/b20f51a73369ddad78b7c981f069f68aa93711df) - **style:** fix disabling of lint rule _(by Athan Reines)_
