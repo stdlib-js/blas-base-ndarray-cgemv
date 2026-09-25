@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,12 +16,28 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
+
+import { complex64ndarray, ndarray } from '@stdlib/types/ndarray';
 
 /**
-* BLAS level 2 routine to perform one of the matrix-vector operations `y = alpha*A*x + beta*y`, `y = alpha*A^T*x + beta*y`, or `y = alpha*A^H*x + beta*y`.
+* Performs one of the matrix-vector operations `y = alpha*A*x + beta*y`, `y = alpha*A^T*x + beta*y`, or `y = alpha*A^H*x + beta*y`, where `alpha` and `beta` are scalars, `x` and `y` are one-dimensional ndarrays, and `A` is an `M` by `N` matrix.
 *
-* @module @stdlib/blas-base-ndarray-cgemv
+* ## Notes
+*
+* -   The function expects the following ndarrays:
+*
+*     -   a two-dimensional input ndarray corresponding to `A`.
+*     -   a one-dimensional input ndarray corresponding to `x`.
+*     -   a one-dimensional input/output ndarray corresponding to `y`.
+*     -   a zero-dimensional ndarray specifying whether `A` should be transposed, conjugate-transposed, or not transposed.
+*     -   a zero-dimensional ndarray containing a scalar constant corresponding to `alpha`.
+*     -   a zero-dimensional ndarray containing a scalar constant corresponding to `beta`.
+*
+* @param arrays - array-like object containing ndarrays
+* @returns output ndarray
 *
 * @example
 * var Complex64Matrix = require( '@stdlib/ndarray-matrix-complex64' );
@@ -29,7 +45,6 @@
 * var Complex64 = require( '@stdlib/complex-float32-ctor' );
 * var scalar2ndarray = require( '@stdlib/ndarray-from-scalar' );
 * var resolveEnum = require( '@stdlib/blas-base-transpose-operation-resolve-enum' );
-* var cgemv = require( '@stdlib/blas-base-ndarray-cgemv' );
 *
 * var A = new Complex64Matrix( [ [ 1.0, 2.0, 3.0, 4.0 ], [ 5.0, 6.0, 7.0, 8.0 ] ] );
 * var x = new Complex64Vector( [ 1.0, 2.0, 3.0, 4.0 ] );
@@ -45,18 +60,15 @@
 *     'dtype': 'complex64'
 * });
 *
-* var out = cgemv( [ A, x, y, trans, alpha, beta ] );
+* var z = cgemv( [ A, x, y, trans, alpha, beta ] );
 * // returns <ndarray>[ <Complex64>[ -9.0, 30.0 ], <Complex64>[ -15.0, 72.0 ] ]
 *
-* var bool = ( out === y );
+* var bool = ( z === y );
 * // returns true
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function cgemv( arrays: [ complex64ndarray, complex64ndarray, complex64ndarray, ndarray, complex64ndarray, complex64ndarray ] ): complex64ndarray;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = cgemv;
